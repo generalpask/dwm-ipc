@@ -1,1 +1,1 @@
-my build of dwm-ipc
+my fork of [dwm-ipc](https://github.com/mihirlad55/dwm-ipc) (a patched dwm) that allows IPC communication through a unix socket. check it out! this build has had some other patches applied, and uses my config
