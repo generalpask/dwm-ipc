@@ -32,11 +32,11 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"xst", "-n", "spterm", "-g", "40x20", "-e", "/usr/bin/zsh", NULL };
-const char *spcmd2[] = {"xst", "-n", "spcalc", "-g", "40x20", "-e", "ncmpcpp", NULL };
+const char *spcmd2[] = {"xst", "-n", "spmusic", "-g", "50x35", "-e", "ncmpcpp", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spranger",    spcmd2},
+	{"spmusic",     spcmd2},
 };
 
 /* tagging */
@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	   class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",      NULL,      NULL,       0,            1,          -1 },
 	{  NULL,      "spterm",   NULL,       SPTAG(0),     1,           1,         0,        -1 },
-	{  NULL,      "spcalc",   NULL,       SPTAG(1),     1,           1,         0,        -1 },
+	{  NULL,      "spmusic",  NULL,       SPTAG(1),     1,           1,         0,        -1 },
 };
 
 #include "vanitygaps.c"
