@@ -118,6 +118,7 @@ static Key keys[] = {
  	{ MODKEY,			        XK_a,		          togglegaps,	    {0} },
 	{ MODKEY|ShiftMask,		    XK_a,		          defaultgaps,	    {0} },
 	{ MODKEY,			        XK_d,		          spawn,            {.v = roficmd } },
+	{ MODKEY,			        XK_p,		          spawn,            SHCMD("power") },
     { MODKEY,			        XK_f,		          togglefullscr,    {0} },
 	{ MODKEY,			        XK_h,		          setmfact,	        {.f = -0.05} },
 	{ MODKEY,			        XK_l,		          setmfact,      	{.f = +0.05} },
