@@ -31,12 +31,14 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"xst", "-n", "spterm", "-e", "/usr/bin/zsh", NULL };
+const char *spcmd1[] = {"xst", "-n", "spterm",  "-e", "/usr/bin/zsh", NULL };
 const char *spcmd2[] = {"xst", "-n", "spmusic", "-g", "65x35", "-e", "ncmpcpp", NULL };
+const char *spcmd3[] = {"xst", "-n", "spranger","-g", "100x27", "-e", "ranger", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spmusic",     spcmd2},
+	{"spranger",    spcmd3},
 };
 
 /* tagging */
@@ -45,10 +47,11 @@ static const char *tags[] = { "1", "2", "3", "4", "5"};
 static const Rule rules[] = {
 	/*	WM_CLASS(STRING) = instance, class
 	 	WM_NAME(STRING) = title 
-	   class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",      NULL,      NULL,       0,            1,          -1 },
-	{  NULL,      "spterm",   NULL,       SPTAG(0),     1,           1,         0,        -1 },
-	{  NULL,      "spmusic",  NULL,       SPTAG(1),     1,           1,         0,        -1 },
+	   class      instance     title       tags mask     isfloating   monitor */
+	{ "Gimp",      NULL,       NULL,       0,            1,          -1 },
+	{  NULL,      "spterm",    NULL,       SPTAG(0),     1,           1,         0,        -1 },
+	{  NULL,      "spmusic",   NULL,       SPTAG(1),     1,           1,         0,        -1 },
+	{  NULL,      "spranger",  NULL,       SPTAG(2),     1,           1,         0,        -1 },
 };
 
 #include "vanitygaps.c"
@@ -116,6 +119,7 @@ static Key keys[] = {
 	{ MODKEY,			        XK_o,		          incnmaster,       {.i = +1 } },
 	{ MODKEY|ShiftMask,		    XK_o,		          incnmaster,       {.i = -1 } },
  	{ MODKEY,			        XK_a,		          togglegaps,	    {0} },
+ 	{ MODKEY,        		    XK_r,    	          togglescratch,    {.ui = 2} },
 	{ MODKEY|ShiftMask,		    XK_a,		          defaultgaps,	    {0} },
 	{ MODKEY,			        XK_d,		          spawn,            {.v = roficmd } },
 	{ MODKEY,			        XK_p,		          spawn,            SHCMD("power") },
